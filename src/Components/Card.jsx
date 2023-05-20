@@ -1,15 +1,20 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 
-const Card = ({item}) => {
-    return (
-        <li>
-            <h2>{item.nombre}</h2>
-            <img src={item.imagen}/>
-            <h3>{item.precio}</h3>
-        </li>
-    )
+const Card = ({cities}) => {
+  return (
+   <ul>
+{cities.filter(cities => cities.country === "AR").map(cities => (
+     <li key={cities.id} style={{backgroundColor:cities.color}}>
+   <h1>{cities.country}</h1>
+    <h3>{cities.city}</h3>
+    <p>{cities.population}</p>
+     </li>
+    
+) )}
+
+   
+   </ul>
+  )
 }
 
 export default Card
