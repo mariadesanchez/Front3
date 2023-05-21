@@ -1,6 +1,8 @@
 import './App.css'
 import React from 'react'
-import Card from './Components/Card';
+import Navbar from './Components/Navbar';
+
+import Card from './Components/Card/Card';
 /* Array de ciudades que debemos utilizar en la actividad */
 const cities = [
   {
@@ -74,15 +76,19 @@ const cities = [
     color: "#6550ED"
   },
 ];
+let titulos = ['Argentina', 'Brasil']
 
 function App() {
 
   return (
-    <div className="App">
+
       <React.Fragment>
+    <Navbar titulos={titulos}/>
    <Card cities={cities}/>
+   
       </React.Fragment>
-    </div>
+     
+
   )
 }
 
